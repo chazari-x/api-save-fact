@@ -7,7 +7,6 @@ import (
 	"log"
 	"mime/multipart"
 	"net/http"
-	"time"
 )
 
 //go:generate mockery --name Sender
@@ -66,8 +65,6 @@ func (s *S) Send(data model.Data) error {
 		log.Println("data sent successfully")
 		return nil
 	case http.StatusBadRequest, http.StatusBadGateway:
-		s.buffer <- data
-		time.Sleep(time.Second * 1)
 		return fmt.Errorf("bad status code: %d", resp.StatusCode)
 	}
 

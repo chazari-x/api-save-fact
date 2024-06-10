@@ -108,6 +108,8 @@ func (w *Worker) startBalancer() {
 			log.Println("Sending data...", w.linkedList.First.Data)
 			if err := w.Sender.Send(w.linkedList.First.Data); err != nil {
 				log.Println("Error sending data:", err)
+				time.Sleep(time.Second * 1)
+				continue
 			}
 		}
 

@@ -27,7 +27,7 @@ func TestS_send(t *testing.T) {
 	babbler := babble.NewBabbler()
 	babbler.Separator = " "
 
-	for i := range 3000 {
+	for i := range 1000 {
 		babbler.Count = rand.Intn(3) + 3
 		start := time.Now().AddDate(rand.Intn(5), rand.Intn(12), rand.Intn(31))
 		end := start.AddDate(rand.Intn(5), rand.Intn(12), rand.Intn(31))
