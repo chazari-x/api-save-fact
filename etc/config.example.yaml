@@ -1,0 +1,5 @@
+host: localhost
+port: "8080"
+bearer_token: 393jgjgio3498ut34
+href: https://development.kpi-drive.ru/_api/facts/save_fact
+buffer: 2000
